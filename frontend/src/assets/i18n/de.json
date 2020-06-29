@@ -1,0 +1,21 @@
+{
+    "data": {
+        "title": "Kunden",
+        "subTitle": "Liste aller Ihrer Kunden",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Telefon",
+        "submit": "Einreichen",
+        "cancel": "Stornieren",  
+        "gender": "Geschlecht",  
+        "search": "Suche",
+        "create": "Create",
+        "selectLanguage": "Sprache auswählen",
+        "dateofBirth": "Geburtsdatum",
+        "city": "Stadt",
+        "actions":"Aktionen",
+        "clear":"Klar",
+        "newCustomer":"Neukunde",
+        "modifyCustomer":"Kunden ändernm"
+    }
+}

@@ -1,0 +1,9 @@
+<section class="mat-typography">
+	<div class="selectLanguage">
+		{{'data.selectLanguage' | translate}}
+	    <select #langSelect (change)="changeLang(langSelect.value)" class="selectData">  
+	      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>  
+	    </select>
+	</div>
+</section>
+<app-customer-list></app-customer-list>

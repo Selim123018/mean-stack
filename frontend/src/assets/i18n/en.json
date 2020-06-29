@@ -1,0 +1,21 @@
+{
+    "data": {
+        "title": "Customers",
+        "subTitle": "List of your all customers",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "create": "Create",
+        "submit": "Submit",  
+        "gender": "Gender",  
+        "search": "Search", 
+        "cancel": "Cancel",
+        "selectLanguage": "Select language",
+        "dateofBirth": "Date of Birth",
+        "city":"City",
+        "actions":"Actions",
+        "clear":"Clear",
+        "newCustomer":"New Customer",
+        "modifyCustomer":"Modify Customer"
+    }
+}

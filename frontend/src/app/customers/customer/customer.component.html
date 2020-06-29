@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <span>{{service.form.controls['_id'].value?"Modify Customer":"New Customer"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="230px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="_id">
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="Name*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email">
+          <mat-error>Invalid email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="phone" matInput placeholder="Phone*">
+          <mat-error *ngIf="service.form.controls['phone'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['phone'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="add-bottom-padding">
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="other">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-form-field>
+          <input formControlName="city" matInput placeholder="City">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="dateofBirth" matInput [matDatepicker]="picker" placeholder="Date of Birth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">{{'data.submit' | translate}}</button>
+          <button mat-raised-button color="warn" (click)="onClear()">{{'data.clear' | translate }}</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
